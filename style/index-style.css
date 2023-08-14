@@ -358,6 +358,50 @@ body:has(.modal-wrapper.active){
     color: #8c959c;
     cursor: pointer;
     fill: #8c959c;
+    position: relative;
+}
+.toottlip{
+    opacity: 0;
+    font-size: 10px;
+    font-weight: 500;
+    /* Выводим текст */
+    position: absolute;
+    /* Абсолютное позиционирование */
+    width: 240px;
+    /* Ширина подсказки */
+    top: -5em;
+    left: 100%;
+    /* Положение подсказки */
+    background: #1c1f22;
+    border-radius: 8px;
+    color: #fff;
+    max-width: 250px;
+    transform: translate(-132px,0);
+    padding: 7px 12px;
+    transition: 1s;
+    /* Время появления подсказки */
+}
+.toottlip::after{
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    transform: translate(calc(-50% - 6px), 0);
+    width: 0px;
+    height: 0px;
+    border: 6px solid transparent;
+    border-top: 9px solid #1c1f22;
+}
+.pdp-sales-block__discount-info-icon:hover .toottlip {
+    opacity: 1;
+    
+}
+[data-tooltip]:hover::after {
+    opacity: 1;
+    /* Показываем подсказку */
+    top: -4em;
+    left: -120px;
+    /* Положение подсказки */
 }
 @media (max-width:868px) {
     main .container{
